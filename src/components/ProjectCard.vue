@@ -9,7 +9,12 @@ export default {
 
 <template>
   <div class="card">
-    <img src="..." class="card-img-top" alt="..." />
+    <img
+      v-if="info.image_url"
+      :src="info.image_url"
+      class="card-img-top"
+      :alt="info.title"
+    />
     <div class="card-body">
       <h4 class="card-title">{{ info.name }}</h4>
       <p class="card-text">
