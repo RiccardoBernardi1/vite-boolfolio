@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <section>
+  <section class="my-4">
     <h2 class="my-4">Projects List</h2>
     <div class="row g-4">
       <div class="col-4" v-for="project in store.projects">
@@ -25,4 +25,8 @@ export default {
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h2 {
+  color: white;
+}
+</style>

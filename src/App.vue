@@ -33,4 +33,8 @@ export default {
 
 <style lang="scss">
 @import "./style/global.scss";
+body {
+  background-image: url(./assets/sfondo-legno-nero-65195_1080x675.jpg);
+  background-size: cover;
+}
 </style>

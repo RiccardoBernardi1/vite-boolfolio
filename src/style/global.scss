@@ -2,3 +2,10 @@
 IMPORT BOOTSTRAP
 ----------------*/
 @import "/node_modules/bootstrap/scss/bootstrap";
+
+// TYPOGRAPHY
+
+* {
+  font-family: "DM Serif Text", serif;
+  font-family: "PT Serif", serif;
+}

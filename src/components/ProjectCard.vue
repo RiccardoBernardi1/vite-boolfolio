@@ -4,6 +4,11 @@ export default {
   props: {
     info: Object,
   },
+  methods: {
+    truncateText(text) {
+      return text.substring(0, 75) + "...";
+    },
+  },
 };
 </script>
 
@@ -16,12 +21,25 @@ export default {
       :alt="info.title"
     />
     <div class="card-body">
-      <h4 class="card-title">{{ info.name }}</h4>
-      <p class="card-text">
-        {{ info.description }}
+      <h5 class="card-title">{{ info.name }}</h5>
+      <span class="badge bg-secondary mb-3">{{ info.type.name }}</span>
+      <span
+        class="badge bg-primary mb-3 mx-2"
+        v-for="technology in info.technologies"
+        >{{ technology.name }}</span
+      >
+      <p class="card-text my-3">
+        {{ truncateText(info.description) }}
       </p>
+      <a href="#" class="btn btn-primary">Details</a>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+  img {
+    max-height: 14rem;
+  }
+}
+</style>
