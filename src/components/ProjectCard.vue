@@ -31,7 +31,11 @@ export default {
       <p class="card-text my-3">
         {{ truncateText(info.description) }}
       </p>
-      <a href="#" class="btn btn-primary">Details</a>
+      <router-link
+        :to="{ name: 'single-project', params: { slug: info.slug } }"
+        class="btn btn-primary"
+        >Details</router-link
+      >
     </div>
   </div>
 </template>
