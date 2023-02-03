@@ -1,7 +1,7 @@
 <template>
   <h2 class="my-4">
-    {{ project.name }}
-    <span class="badge bg-secondary mb-3 mx-2">{{ project.type.name }}</span>
+    {{ project?.name }}
+    <span class="badge bg-secondary mb-3 mx-2">{{ project.type?.name }}</span>
     <span
       class="badge bg-primary mb-3 mx-2"
       v-for="technology in project.technologies"
@@ -18,7 +18,7 @@ export default {
   name: "SingleProject",
   data() {
     return {
-      project: null,
+      project: {},
     };
   },
   created() {

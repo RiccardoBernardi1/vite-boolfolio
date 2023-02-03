@@ -19,6 +19,9 @@ export default {
     axios.get("http://127.0.0.1:8000/api/projects").then((response) => {
       this.store.projects = response.data;
     });
+    axios.get("http://127.0.0.1:8000/api/types").then((response) => {
+      this.store.types = response.data;
+    });
   },
 };
 </script>

@@ -22,9 +22,9 @@ export default {
     />
     <div class="card-body">
       <h5 class="card-title">{{ info.name }}</h5>
-      <span class="badge bg-secondary mb-3">{{ info.type.name }}</span>
+      <span class="badge bg-secondary mb-3" v-if="info.type">{{ info.type.name }}</span>
       <span
-        class="badge bg-primary mb-3 mx-2"
+        class="badge bg-primary mb-3 mx-2" v-if="info.technologies"
         v-for="technology in info.technologies"
         >{{ technology.name }}</span
       >

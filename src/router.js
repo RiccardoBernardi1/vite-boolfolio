@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage.vue";
 import ContactUs from "./pages/ContactUs.vue";
 import SingleProject from "./pages/SingleProject.vue";
 import Page404 from "./pages/Page404.vue";
+import TypeFilteredList from "./pages/TypeFilteredList.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -24,7 +25,11 @@ const router = createRouter({
       name: "single-project",
       component: SingleProject,
     },
-
+    {
+      path: "/boolfolio/type/:slug",
+      name: "type-filtered-list",
+      component: TypeFilteredList,
+    },
     {
       path: "/:pathMatch(.*)*",
       name: "page-404",
