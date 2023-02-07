@@ -61,9 +61,9 @@ export default {
           email: this.formData.email,
           message: this.formData.message,
         })
-        .then((res) => {
-          console.log(res.data);
-        });
+        this.formData.name="";
+        this.formData.email="";
+        this.formData.message="";
     },
   },
 };
