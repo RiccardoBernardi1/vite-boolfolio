@@ -36,7 +36,7 @@
             </a>
             <ul class="dropdown-menu">
               <li v-for="type in store.types"> 
-                <router-link :to="{name: 'type-filtered-list',params: { slug: type.slug },}" @click="getTypeAfterFewSeconds()" class="dropdown-item">
+                <router-link :to="{name: 'type-filtered-list',params: { slug: type.slug }}"  class="dropdown-item">
                     {{ type.name }}
                 </router-link>
               </li>
@@ -66,23 +66,6 @@ export default {
     return {
       store,
     };
-  },
-  methods:{
-    getTypeAfterFewSeconds(){
-      setTimeout(this.getType,10);
-    },
-    getType(){
-      axios
-      .get(`http://localhost:8000/api/types/${this.$route.params.slug}`)
-      .then((response) => {
-        this.store.type = response.data;
-        console.log(this.store.type)
-      })
-      .catch((err) => {
-        console.log(err);
-        this.$router.push({ name: "page-404" });
-      });
-    }
   },
 };
 </script>

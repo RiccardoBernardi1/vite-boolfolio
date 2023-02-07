@@ -1,8 +1,11 @@
 <script>
+import { stringifyExpression } from '@vue/compiler-core';
+
 export default {
   name: "ProjectsCard",
   props: {
     info: Object,
+    type: String,
   },
   methods: {
     truncateText(text) {
@@ -23,9 +26,15 @@ export default {
     <div class="card-body">
       <h5 class="card-title">{{ info.name }}</h5>
       <span class="badge bg-secondary mb-3 me-2" v-if="info.type">{{ info.type.name }}</span>
+      <span class="badge bg-secondary mb-3 me-2" v-else>{{ type }}</span>
       <span
         class="badge bg-primary mb-3 me-2" v-if="info.technologies"
         v-for="technology in info.technologies"
+        >{{ technology.name }}</span
+      >
+      <span
+        class="badge bg-primary mb-3 me-2" v-else
+        v-for="technology in info.projects.technologies"
         >{{ technology.name }}</span
       >
       <p class="card-text my-3">
